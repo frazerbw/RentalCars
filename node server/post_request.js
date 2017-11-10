@@ -12,7 +12,7 @@ TASK LIST:
 var args = process.argv.slice(2);
 var taskChoice = args[0];
 
-if (taskChoice == undefined || taskChoice < 0 || taskChoice > 4) {
+if (taskChoice == undefined || isNaN(taskChoice)) {
   console.log("Invalid Task ID, please refer to README");
   process.exit();
 }

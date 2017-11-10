@@ -59,7 +59,7 @@ public class Main {
                         highestRatedVehicle = vehicle;
                     }
 
-                    if (highestRatedVehicle.getCarType() != vehicle.getCarType()) {
+                    if (!highestRatedVehicle.getCarType().equals(vehicle.getCarType())) {
                         System.out.println(vehicle.name + " - " + vehicle.getCarType() + " - " +
                                 vehicle.supplier + " - " + vehicle.rating);
                     }
@@ -85,6 +85,9 @@ public class Main {
                     System.out.println(vehicle.name + " - " + vehicle.getScore() + " - " +
                             vehicle.rating + " - " + (vehicle.getScore() + vehicle.rating));
                 }
+            }
+            else {
+                System.out.println("ERROR: Task ID does not exist");
             }
 
         }

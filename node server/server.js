@@ -8,12 +8,14 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+output = "";
+
 app.post('/', function (req, res) {
   console.log("Requesting Task: " + req.body.requestID);
 
   var child = require('child_process').spawn(
     'java', ['-jar', '../out/artifacts/Rental_Cars_jar/Rental Cars.jar',
-     req.body.requestID.toString()]
+     req.body.requestID]
   );
 
   child.stdout.on('data', function(data) {
@@ -25,13 +27,12 @@ app.post('/', function (req, res) {
   });
 
   child.on('close', function (code) {
-      console.log("Response Sent\n")
+      console.log("Response Sent\n");
       res.send(output);
+      output = "";
   });
 
   module.exports = child;
-})
-
-output = ""
+});
 
 app.listen(port, () => console.log('\nListening on port ' + port +  ' \n\nWaiting for post requests\n'));
