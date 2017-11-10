@@ -1,0 +1,30 @@
+This program consists of a java application that is built into a 'JAR' file
+
+The 'JAR' is then used by the node js server (node server/server.js) to respond to POST requests
+
+POST requests can be tested using the node js POST utility script (node server/post_request.js)
+
+TASK LIST:
+
+1: Print a list of all the cars, in ascending price order
+2: Print a list of the specifications for each car
+3: Print out the highest rated supplier per car type, descending order
+4: Print out a list of vehicles, ordered by the sum of the scores in descending order
+
+HOW TO RUN:
+
+1) navigate to the 'node server' folder
+2) node server.js
+3) node post_request.js x       [replace x with a task number from the TASK LIST]
+
+-
+
+Testing is rather limited and only cover the Vehicle class for the java application.
+
+If I were to spend more time on this system I would introduce tests for the POST requests
+too using a test version of vehicles.json.
+
+
+
+
+
